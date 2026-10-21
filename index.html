@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - NeuroSprint</title>
+  <link rel="icon" type="image/png" href="assets/app_icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0E1A;
+      --card-bg: rgba(18, 24, 38, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --accent-cyan: #00F0FF;
+      --accent-purple: #8B5CF6;
+      --accent-gradient: linear-gradient(135deg, #00F0FF 0%, #8B5CF6 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Ambient background glow */
+    .glow-circle {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(0, 240, 255, 0.05) 50%, transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .glow-1 { top: -150px; right: -150px; }
+    .glow-2 { bottom: -200px; left: -150px; }
+
+    header {
+      padding: 24px 20px;
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      background: rgba(10, 14, 26, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 240, 255, 0.25);
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    main {
+      flex: 1;
+      max-width: 860px;
+      margin: 48px auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    .policy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 44px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      .policy-card {
+        padding: 24px;
+      }
+      main {
+        margin: 24px auto;
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .effective-date {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 36px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-cyan);
+      border-radius: 2px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+      padding-left: 4px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+      font-weight: bold;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    .highlight-box {
+      background: rgba(0, 240, 255, 0.04);
+      border: 1px solid rgba(0, 240, 255, 0.18);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      color: var(--text-main);
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-circle glow-1"></div>
+  <div class="glow-circle glow-2"></div>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="assets/app_icon.png" alt="NeuroSprint Logo" class="logo-icon">
+        <span class="logo-text">NeuroSprint</span>
+      </a>
+      <a href="index.html" class="nav-link">← Home</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="policy-card">
+      <div class="tag">Legal & Privacy</div>
+      <h1>Privacy Policy</h1>
+      <div class="effective-date">Effective Date: October 21, 2026 | Last Updated: October 2026</div>
+
+      <div class="highlight-box">
+        <p><strong>Quick Summary:</strong> NeuroSprint respects your privacy. We <strong>do not collect, sell, or track</strong> your personal identity, contact details, or location. All your game progress, brain age scores, and stats remain securely on your device.</p>
+      </div>
+
+      <h2>1. Overview</h2>
+      <p>This Privacy Policy explains how <strong>NeuroSprint</strong> ("the App", "we", "us", or "our"), developed by <strong>ProgrammerCrow</strong>, handles information when you use our mobile application on iOS. Your trust is paramount, and our application is designed with a strict privacy-first architecture.</p>
+
+      <h2>2. Information We Do NOT Collect</h2>
+      <p>We do not require account registration, and we do not collect or store any of the following:</p>
+      <ul>
+        <li><strong>No Personal Identification:</strong> We never ask for your name, email address, physical address, or phone number.</li>
+        <li><strong>No Location Tracking:</strong> We never access GPS or fine location data.</li>
+        <li><strong>No Device Sensors or Media:</strong> We do not access your microphone, camera, photo library, or address book.</li>
+        <li><strong>No Health or Biometric Records:</strong> The "Brain Age Test" is an educational cognitive reflex puzzle based on the scientific Stroop Effect. It does not collect medical or biometric data.</li>
+      </ul>
+
+      <h2>3. Data Stored Locally on Your Device</h2>
+      <p>NeuroSprint stores gameplay data directly and locally on your iOS device using Apple's secure sandbox (SharedPreferences / NSUserDefaults). This data includes:</p>
+      <ul>
+        <li>High scores and game performance metrics (e.g., reaction times, accuracy rates)</li>
+        <li>Daily streak count and streak calendar data</li>
+        <li>Unlocked achievements and badges</li>
+        <li>Local user preferences (sound effects, haptic feedback toggle, language choice)</li>
+      </ul>
+      <p>This information is stored entirely on your device and is never transmitted to our private servers. If you delete or uninstall the app, this local data is automatically erased by iOS.</p>
+
+      <h2>4. Third-Party Services & Advertising</h2>
+      <p>To support free development and keep NeuroSprint accessible to everyone, our app uses <strong>Google AdMob</strong> (Google Mobile Ads SDK) to display advertisements (such as optional rewarded ads for extra lives). Google AdMob may collect and process anonymous technical identifiers strictly in compliance with Apple's App Tracking Transparency framework:</p>
+      <ul>
+        <li>Anonymous Device Identifiers (such as IDFA if consent is granted, or non-personalized identifier)</li>
+        <li>Ad performance metrics and diagnostic information (ad load, viewability, crash logs)</li>
+      </ul>
+      <p>For more details on how Google processes ad data, please review Google's Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy & Terms</a>.</p>
+
+      <h2>5. Children's Privacy (COPPA Compliance)</h2>
+      <p>NeuroSprint is designed for a general audience and is rated 4+. We do not knowingly collect personal identifiable information from children under the age of 13. If you believe any personal information has inadvertently reached us, please contact us immediately, and we will take prompt steps to remove it.</p>
+
+      <h2>6. Apple App Tracking Transparency (ATT)</h2>
+      <p>In accordance with Apple's guidelines, NeuroSprint complies with the App Tracking Transparency framework. If prompted, you have full control over whether to permit ad tracking. Denying tracking will never restrict your access to core game features or brain training modes.</p>
+
+      <h2>7. Security</h2>
+      <p>Because we do not operate external database servers storing your personal profiles, the risk of data breaches involving your personal information is eliminated. Your local app data is safeguarded by Apple iOS sandbox encryption.</p>
+
+      <h2>8. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy periodically to reflect new features or regulatory requirements. Any modifications will be posted directly to this page with an updated "Last Updated" timestamp.</p>
+
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or our practices, please reach out to us:</p>
+      <ul>
+        <li><strong>Developer:</strong> ProgrammerCrow</li>
+        <li><strong>Project:</strong> NeuroSprint</li>
+        <li><strong>Support & Inquiries:</strong> <a href="mailto:support@programmercrow.com">support@programmercrow.com</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/ProgrammerCrow/NeuroSprint" target="_blank" rel="noopener noreferrer">github.com/ProgrammerCrow/NeuroSprint</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <span>•</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span>•</span>
+      <a href="mailto:support@programmercrow.com">Support</a>
+    </div>
+    <div>&copy; 2026 ProgrammerCrow. All rights reserved. NeuroSprint™ is a cognitive training game.</div>
+  </footer>
+</body>
+</html>
+
